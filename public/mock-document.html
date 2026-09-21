@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mock投标文件</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { min-height: 100%; }
+      body {
+        margin: 0;
+        background: #f5f7fa;
+        padding: 24px;
+        color: #333;
+        font: 13px/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .chapter {
+        max-width: 680px;
+        margin: 0 auto 22px;
+        border: 1px solid #f0f0f0;
+        border-radius: 2px;
+        background: #fff;
+        padding: 28px 40px;
+      }
+      h3 {
+        margin: 0 0 18px;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 10px;
+        font-size: 16px;
+        text-align: center;
+      }
+      p { margin: 0 0 10px; }
+      .evidence { margin: 14px 0 4px; }
+      .position { display: block; margin-top: 4px; color: #666; font-size: 11px; }
+      @media (max-width: 460px) {
+        body { padding: 14px; }
+        .chapter { padding: 22px 24px; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="chapter">
+      <h3>第一章 投标函</h3>
+      <p>致：招标人（中核集团电子采购平台）</p>
+      <p>我方已仔细研究本项目招标文件的全部内容，愿意按照招标文件的各项要求参加投标，并承担相应责任与义务。</p>
+      <p>我方承诺：如中标，将按要求提交履约担保，并严格按照招标文件及合同约定履行义务。</p>
+    </section>
+    <section class="chapter">
+      <h3>第二章 法定代表人身份证明</h3>
+      <p>投标人名称：测试投标人 1</p>
+      <p>单位性质：有限责任公司　成立时间：二〇一五年三月　经营期限：长期</p>
+      <p>特此证明法定代表人身份，用于本项目投标活动。</p>
+    </section>
+    <section class="chapter">
+      <h3>第三章 授权委托书</h3>
+      <p>本人（法定代表人）授权（代理人）为我方代理人，以本单位名义参加本项目投标活动。</p>
+      <p>代理人在投标、开标、评标、合同谈判过程中签署的文件和处理与之有关的一切事务，我方均予以承认。</p>
+      <p class="evidence" id="evidence-one">
+        项目计划分为准备、实施和验收三个阶段，并配置相应质量保证措施。
+        <span class="position">投标文件技术部分 · 第3项</span>
+      </p>
+    </section>
+    <section class="chapter">
+      <h3>第四章 联合体协议书</h3>
+      <p>（如适用）各方自愿组成联合体，共同参加本项目投标。</p>
+      <p>联合体牵头人负责整体协调，成员方按分工承担相应工作与责任。</p>
+    </section>
+    <section class="chapter">
+      <h3>第五章 投标保证金</h3>
+      <p>我方已按招标文件要求提交投标保证金，金额为人民币（大写）__________。</p>
+      <p>保证金以电汇或保函形式提交，有效期覆盖投标有效期。</p>
+    </section>
+    <section class="chapter">
+      <h3>第六章 已标价工程量清单</h3>
+      <p>本工程量清单依据招标文件及国家现行计价规范编制，价格含税费与风险。</p>
+      <p>分项报价汇总如下：土建工程、安装工程、设备购置等逐项列示。</p>
+    </section>
+    <section class="chapter">
+      <h3>第七章 施工组织设计</h3>
+      <p>总体施工部署：明确工期目标、关键节点与资源配置计划。</p>
+      <p>质量保证体系：建立三级质检制度，落实关键工序旁站与验收。</p>
+      <p class="evidence" id="evidence-two">
+        根据投标文件响应程度和实施方案完整性进行评审。
+        <span class="position">招标文件 · 第3.2条 评分办法</span>
+      </p>
+    </section>
+    <section class="chapter">
+      <h3>第八章 项目管理机构</h3>
+      <p>项目经理具备相应执业资格与同类工程业绩。</p>
+      <p>技术负责人及主要管理人员配备满足招标文件要求。</p>
+    </section>
+    <section class="chapter">
+      <h3>第九章 资格审查资料</h3>
+      <p>营业执照、资质证书、安全生产许可证均在有效期内。</p>
+      <p>近三年类似工程业绩、财务状况及信誉情况详见附件。</p>
+    </section>
+    <section class="chapter">
+      <h3>第十章 其他材料</h3>
+      <p>本部分收录投标人认为有必要提交的其他证明材料。</p>
+      <p>包括但不限于奖项、专利、服务承诺等佐证文件。</p>
+    </section>
+    <script>
+      // 本地Mock根据证据编号定位到相应原文；正式环境由客户预览服务负责定位。
+      var evidenceId = new URLSearchParams(window.location.search).get('evidenceId') || '';
+      var target = document.getElementById(evidenceId.endsWith('002') ? 'evidence-two' : 'evidence-one');
+      if (target) target.scrollIntoView({ block: 'center' });
+    </script>
+  </body>
+</html>
